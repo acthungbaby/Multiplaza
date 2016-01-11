@@ -1,0 +1,1143 @@
+@import "compass";
+@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/font-face";
+@import "compass/css3/images";
+@import "compass/css3/inline-block";
+@import "compass/css3/text-shadow";
+@import "compass/utilities/general/clearfix";
+
+@include font-face("bellota", font-files(font-url("bellota-regular-webfont.woff", true), woff, font-url("bellota-regular-webfont.otf", true), opentype, font-url("bellota-regular-webfont.svg", true), svg), font-url("bellota-regular-webfont.eot?#iefix", true));
+@include font-face("bellota-bold", font-files(font-url("bellota-bold-webfont.woff", true), woff, font-url("bellota-bold-webfont.otf", true), opentype, font-url("bellota-bold-webfont.svg", true), svg), font-url("bellota-bold-webfont.eot?#iefix", true));
+@include font-face("bellota-italic", font-files(font-url("bellota-italic-webfont.woff", true), woff, font-url("bellota-italic-webfont.otf", true), opentype, font-url("bellota-italic-webfont.svg", true), svg), font-url("bellota-italic-webfont.eot?#iefix", true));
+@include font-face("montserrat", font-files(font-url("montserrat-regular-webfont.woff", true), woff, font-url("montserrat-regular-webfont.otf", true), opentype, font-url("montserrat-regular-webfont.svg", true), svg), font-url("montserrat-regular-webfont.eot?#iefix", true));
+
+/*Colores*/
+
+$lightblue:#5EBFCC;
+
+$turquesa:#69D1E6;
+
+$orange:#F96900;
+
+$gray:#505050;
+
+$darkgray:#58595B;
+
+
+body{
+	font-size: 16px;
+	font-family: "bellota";
+	background-image: url('../images/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	color:$gray;
+}
+
+
+#contenedor{
+	z-index: 1;
+	width: 940px;
+	margin: 0 auto;
+	background-color: #fff;
+	@include pie-clearfix;
+
+	&.nobg{
+		background-color: transparent;
+	}
+}
+
+
+
+/*Slider para firefox*/
+
+ol{
+	li{
+		a{
+			font-family: "montserrat";
+		}
+
+
+	}
+}
+
+
+/*Navegacion y Header*/
+
+
+.submenuparent:after { content: '▷'; float: right; position: relative; left: 10px; }
+
+.submenuparent li{
+	width: 200px;
+}
+
+
+
+#primary{
+	
+	margin-left: 152px;
+	ul.children:before {
+    content:  "▼";
+}
+	ul ul {
+		display: none;
+		z-index: 1000;
+	}
+
+	ul li:hover > ul {
+		display: block;
+	}
+
+	ul {	
+		list-style: none;
+		position: relative;
+		display: inline-table;
+	}
+
+	ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+	ul li {
+		float: left;
+	}
+
+	ul li a {
+		display: block; padding: 25px 0px 33px 50px;
+		color: $lightblue; text-decoration: none;
+		&:hover{
+			color: $orange;
+		}
+		&.last{
+			padding: 25px 0px 33px 40px;
+		}
+	}
+
+	ul li ul a{
+		font-size: 13px;
+	}
+
+	ul ul {
+		padding: 0;
+		position: absolute; top: 100%;
+
+	}
+	ul ul li {
+		float: none; 
+		position: relative;
+		background-color: $lightblue;
+		left: 20px
+	}
+	ul ul li a {
+		padding: 7px 15px; 
+		color: #fff;
+		font-family: 'montserrat';
+		&:hover{
+			color: yellow;
+		}
+	}
+
+	ul ul ul {
+		position: absolute; left: 86%; top:0;
+	}
+}
+
+
+.bodyTiendas nav #navTiendas a:first-of-type {
+    color: $orange;
+}
+
+.bodyTiendas #primary ul ul li a{
+    color: #fff !important;
+    &:hover{
+    	color: yellow !important;
+    }
+}
+
+.bodyServicios nav #navServicios a {
+    color: $orange;
+}
+
+.bodyServicios #primary ul ul li a{
+    color: #fff !important;
+    &:hover{
+    	color: yellow !important;
+    }
+}
+
+.bodyPatio nav #navPatio a {
+    color: $orange;
+}
+
+.bodyPatio #primary ul ul li a{
+    color: #fff !important;
+    &:hover{
+    	color: yellow !important;
+    }
+}
+
+.bodyEntretenimiento nav #navEntretenimiento a {
+    color: $orange;
+}
+
+.bodyEntretenimiento #primary ul ul li a{
+    color: #fff !important;
+    &:hover{
+    	color: yellow !important;
+    }
+}
+
+.bodyRSE nav #navRSE a {
+    color: $orange;
+}
+
+.bodyRSE #primary ul ul li a{
+    color: #fff !important;
+    &:hover{
+    	color: yellow !important;
+    }
+}
+
+#navBuscar a{
+	background-image: url('../images/menu/buscar.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	&:hover{
+
+	}
+}
+
+#navDescuentos a{
+	background-image: url('../images/menu/descuentos.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	&:hover{
+		background-image: url('../images/menu/descuentoshover.png');
+	}
+}
+
+#navComo a{
+	background-image: url('../images/menu/como.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	&:hover{
+		background-image: url('../images/menu/comohover.png');
+	}
+}
+
+#navContacto a{
+	background-image: url('../images/menu/contacto.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	&:hover{
+		background-image: url('../images/menu/contactohover.png');
+	}
+}
+
+#navMapa a{
+	background-image: url('../images/menu/mapa.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	&:hover{
+		background-image: url('../images/menu/mapahover.png');
+	}
+}
+
+
+header{
+	margin-top: 50px;
+	height: 90px;
+	background-color: #fff;
+	margin-bottom: 40px;
+	section{
+		width: 940px;
+		margin: 0 auto;
+	}
+
+}
+
+.logo{
+	float: left;
+	margin-top: 10px;
+}
+
+
+/*#primary{
+
+	ul{
+		@include pie-clearfix;
+		float: right;
+		list-style: none;
+		position: relative;
+		//display:inline-table;
+		&:after{
+			content: ""; clear: both; display: block;
+		}
+		li{
+			&.levelone{
+				float: left;
+			}
+			
+			
+			margin: 20px 50px 0px 0px;
+			&.last{
+				margin-right: 0px;
+			}
+			a{
+				text-decoration: none;
+				color:$lightblue;
+				&:hover{
+					color:$orange;
+				}
+			}
+		}
+	}
+}*/
+
+#secondarymenucontainer{
+	width: 940px;
+	margin: 0 auto;
+	form{
+		display: inline;
+		height: 0px;
+		width: 0px;
+	}
+
+	#searchbox{
+		//margin-left: 25px;
+		position: relative;
+		left: 25px;
+		border: none !important;
+		width: 0px;
+		font-family: 'montserrat';
+		color:$gray;
+		padding: 0px;
+	}
+}
+
+#secondary{
+	ul{
+		@include pie-clearfix;
+		float: right;
+		li{
+			float: left;
+			margin: 0px 45px 0px 0px;
+			position: relative;
+			bottom: 30px;
+			
+			//padding: 0px 0px 5px 0px;
+			&.last{
+				margin-right: 0px;
+			}
+			a{
+				text-decoration: none;
+				color:#fff;
+				font-size: 11px;
+				font-family: 'montserrat';
+				padding: 5px 0px 5px 25px;
+				&:hover{
+					color:$orange;
+				}
+
+				&.first{
+					&:hover{
+						color:#fff;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+
+/*Publicidad*/
+
+#publicidad{
+	margin-top: 40px;
+	//position: relative;
+	height: 160px;
+	width: 940px;
+	background-image: url('../images/publicidad/banner-tarjeta-vision.png');
+	//top: 2px;
+	&.extramargin{
+		margin-top: 140px;
+	}
+	a{
+		max-width: 220px;
+		min-height: 58px;
+		background-image: url('../images/publicidad/boton-solicitala-inactivo.png');
+		display: block;
+		position: relative;
+		left: 680px;
+		top: 48px;
+		&:hover {
+		  background-image: url('../images/publicidad/boton-solicitala-hover.png');
+		}
+	}
+}
+
+/*Noticias*/
+
+#news{
+	margin-top: 40px;
+	@include pie-clearfix;
+	article{
+		height: 300px;
+		width: 300px;
+		margin-right: 20px;
+		float: left;
+		position:relative;
+		&.last{
+			margin-right: 0px;
+		}
+		.text{
+			height: 100px;
+			width: 100%;
+			position:absolute;
+  			bottom:0;
+  			opacity: 0.9;
+  			background-color: #000;
+  			h3{
+  				color: $orange;
+  				margin: 20px 0px 0px 20px;
+  				font-size: 14px;
+  			}
+  			span{
+  				color: #fff;
+  				display: block;
+  				margin: 10px 0px 0px 20px;
+  				font-family: 'montserrat';
+  				font-size: 18px;
+  				text-transform: uppercase;
+  			}
+
+  			a{
+				color:$turquesa;
+				font-family: 'montserrat';
+				font-size: 11px;
+				text-decoration: none;
+				margin: 0px 0px 0px 20px;
+				position: relative;
+				top: 5px;
+  			}
+		}
+	}
+}
+
+
+/*Tiendas*/
+
+#tiendas{
+	margin-top: 60px;
+	@include pie-clearfix;
+	article{
+		width: 300px;
+		height: 150px;
+		background-color: $gray;
+		margin: 0px 0px 20px 10px;
+		float: left;
+		position:relative;
+		&:hover{
+			cursor: pointer;
+		}
+		
+
+		&.accesorios{
+			background-image: url('../images/tiendas/accesorios.png');
+		}
+
+		&.artesania{
+			background-image: url('../images/tiendas/artesania.png');
+		}
+
+		&.calzado{
+			background-image: url('../images/tiendas/calzados.png');
+		}
+
+		&.deportes{
+			background-image: url('../images/tiendas/deportes.png');
+		}
+
+		&.electrodomesticos{
+			background-image: url('../images/tiendas/electrodomesticos.png');
+		}
+
+		&.jugueteria{
+			background-image: url('../images/tiendas/jugueteria.png');
+		}
+
+		&.multitiendas{
+			background-image: url('../images/tiendas/multitiendas.png');
+		}
+
+		&.musica{
+			background-image: url('../images/tiendas/musica.png');
+		}
+
+		&.perfumeria{
+			background-image: url('../images/tiendas/perfumeria.png');
+		}
+
+		&.vestimenta{
+			background-image: url('../images/tiendas/vestimenta.png');
+		}
+
+		&.bordados{
+			background-image: url('../images/tiendas/bordados.png');
+		}
+
+		&.cajero{
+			background-image: url('../images/tiendas/cajeros.png');
+			//background-size:300px 240px;
+		}
+
+		&.cambio{
+			background-image: url('../images/tiendas/casascambios.png');
+		}
+
+		&.cerrajeria{
+			background-image: url('../images/tiendas/cerrajeria.png');
+		}
+
+		&.cooperativas{
+			background-image: url('../images/tiendas/cooperativas.png');
+		}
+
+		&.courier{
+			background-image: url('../images/tiendas/courier.png');
+		}
+
+		&.cyber{
+			background-image: url('../images/tiendas/cyber.png');
+		}
+
+		&.banco{
+			background-image: url('../images/tiendas/entidades.png');
+		}
+
+		&.gimnasio{
+			background-image: url('../images/tiendas/gimnasio.png');
+		}
+
+		&.inmobiliaria{
+			background-image: url('../images/tiendas/inmobiliaria.png');
+		}
+
+		&.lavanderia{
+			background-image: url('../images/tiendas/lavanderia.png');
+		}
+
+		&.optica{
+			background-image: url('../images/tiendas/optica.png');
+		}
+
+		&.peluqueria{
+			background-image: url('../images/tiendas/peluqueria.png');
+		}
+
+		&.prestamos{
+			background-image: url('../images/tiendas/prestamos.png');
+		}
+
+		&.revisteria{
+			background-image: url('../images/tiendas/revisteria.png');
+		}
+
+		&.telefonia{
+			background-image: url('../images/tiendas/telefonia.png');
+		}
+
+		&.universidad{
+			background-image: url('../images/tiendas/universidad.png');
+		}
+
+		&.buffet{
+			background-image: url('../images/tiendas/buffet.png');
+		}
+
+		&.heladeria{
+			background-image: url('../images/tiendas/cafeteria.png');
+		}
+
+		&.fast{
+			background-image: url('../images/tiendas/fastfood.png');
+		}
+
+		&.pastas{
+			background-image: url('../images/tiendas/pastas.png');
+		}
+
+		&.picadas{
+			background-image: url('../images/tiendas/picadas.png');
+		}
+
+		&.cine{
+			background-image: url('../images/tiendas/cine.png');
+		}
+
+		&.juegos{
+			background-image: url('../images/tiendas/juegos.png');
+		}
+
+		&.eventos{
+			background-image: url('../images/tiendas/eventos.png');
+		}
+
+
+
+
+
+		.text{
+			height: 0px;
+			width: 100%;
+			position:absolute;
+  			bottom:0;
+  			opacity: 0.0;
+  			background-color: #000;
+
+  			h3{
+  				font-family: 'montserrat';
+  				font-size: 14px;
+  				text-align: center;
+  				color: #fff;
+  				position: relative;
+  				top: 8px;
+  			}
+		}
+
+
+	}
+}
+
+#listadotiendas{
+	margin-top: 60px;
+	@include pie-clearfix;
+	h1{
+		margin-left: 10px;
+		font-size: 24px;
+		color: $orange;
+		margin-bottom: 60px;
+		a{
+			text-decoration: none;
+			color: $orange;
+		}
+		span{
+			color:$gray;
+		}
+	}
+
+	.tienda{
+		min-height: 250px;
+		width: 220px;
+		margin-bottom: 120px;
+		margin-left: 10px;
+		margin-right: 3px;
+		float: left;
+		h1{
+			font-family: 'montserrat';
+			color: $lightblue;
+			padding: 10px 0px;
+			border-top:1px solid #505050;
+			border-bottom:1px solid #505050;
+			width: 220px;
+			font-size: 16px;
+			margin-left: 0px;
+			margin-bottom: 20px;
+		}
+		h3{
+			font-family: 'montserrat';
+			color: $orange;
+			font-size: 12px;
+			margin-top: 30px;
+			&:first-of-type{
+				margin-top: 20px;
+			}
+		}
+
+		p{
+			font-family: 'montserrat';
+			font-size: 12px;
+			margin-top: 10px;
+			line-height: 22px;
+		}
+
+		a{
+			font-family: 'montserrat';
+			font-size: 11px;
+			color: $turquesa;
+			text-decoration: none;
+			position: relative;
+			top: 20px;
+			&:hover{
+				color: $orange;
+			}
+		}
+	}
+}
+
+
+/*Cine*/
+.bodyCartelera #contenedor{
+	padding-bottom: 60px;
+}
+
+#cartelera{
+	margin-top: 60px;
+	margin-left: 10px;
+	@include pie-clearfix;
+	#estrenos{
+		//margin-top: 20px;
+		@include pie-clearfix;
+	}
+	#peliculas{
+		margin-top: 100px;
+		@include pie-clearfix;
+	}
+
+	h1{
+		font-family: 'montserrat';
+		color: $lightblue;
+		padding: 10px 0px;
+		border-top:1px solid #505050;
+		border-bottom:1px solid #505050;
+		width: 220px;
+		
+	}
+
+	.pelicula{
+		width: 163px;
+		height: 200px;
+		background-color: $gray;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		margin-right: 50px;
+		float: left;
+		font-family: 'montserrat';
+		font-size: 12px;
+		color: #fff;
+		.text{
+			opacity: 0.0;
+			background-color: $lightblue;
+			height: 100%;
+			cursor: pointer;
+			h3,p,span{
+				margin-left: 12px;
+				line-height: 19px;
+			}
+			h3:first-of-type{
+				padding-top: 12px;
+			}
+			span{
+				color: #000;
+			}
+		}
+
+		h2{
+			color: #000;
+			font-family: 'bellota';
+			font-size: 18px;
+			margin-top: 20px;
+		}
+	}
+	
+}
+
+
+/*Como llegar*/
+
+.bodyComo #contenedor{
+	padding-bottom: 60px;
+}
+
+#mapa{
+	margin-top: 60px;
+	margin-left: 10px;
+}
+
+#direcciones{
+	margin-left: 10px;
+	margin-top: 20px;
+
+	h3{
+		font-size: 23px;
+		color: $orange;
+		margin-top: 40px;
+		&:first-of-type{
+			margin-top: 0px;
+		}
+	}
+
+	p{
+		color: $darkgray;
+		max-width: 640px;
+		margin-top: 30px;
+	}
+}
+
+
+/*Contacto*/
+
+.bodyContacto span{font-family: 'montserrat'; font-size: 14px; margin-left: 10px; color: #505050; margin-top: 60px; display: block;}
+
+.bodyContacto #contenedor{
+	padding-bottom: 60px;
+}
+
+#contacto{
+	@include pie-clearfix;
+	width: 690px;
+	margin-left: 10px;
+	margin-top: 60px;
+	label{
+		width: 165px;
+		color: #505050;
+		display: block;
+		float: left;
+	}
+
+	input[type="text"],input[type="email"], textarea{
+		float: left;
+		width: 450px;
+		margin-bottom: 20px;
+		border:1px solid $lightblue;
+		outline:none;
+		height: 20px;
+		padding: 5px 5px;
+	}
+
+	textarea{
+		width: 455px;
+		height: 110px;
+	}
+	input[type="submit"]{
+		//float: left;
+		//margin-top: 240px;
+		//position: relative;
+		//right: 460px;
+		margin-left: 163px;
+		background-color: $lightblue;
+		border: none;
+		padding: 5px 15px;
+		font-family: 'montserrat';
+		color: #fff;
+		cursor: pointer;
+	}
+}
+/*Descuentos*/
+
+.bodyDescuentos #contenedor{
+	padding-bottom: 120px;
+}
+
+#listado-descuentos{
+	margin-top: 60px;
+	margin-left: 10px;
+}
+
+.descuento{
+	float: left;
+	margin-right: 12px;
+	margin-bottom: 50px;
+	.porcentaje{
+		margin-bottom: 20px;
+	}
+	h1{
+		font-family: 'montserrat';
+		color: $lightblue;
+		padding: 10px 0px;
+		border-top:1px solid #505050;
+		border-bottom:1px solid #505050;
+		width: 220px;
+		font-size: 16px;
+		margin-left: 0px;
+		margin-bottom: 20px;
+	}
+
+	p{
+		font-family: 'montserrat';
+		font-size: 12px;
+		line-height: 25px;
+		span{
+			color:$orange
+		}
+	}
+}
+
+/*Formulario, Beca, RSE*/
+
+.bodyBeca #contenedor{padding-bottom: 120px;}
+
+.bodyBeca #contenedor ul li{
+	font-family: 'montserrat';
+	font-size: 14px;
+	color: $gray;
+	margin-left: 10px;
+	margin-bottom: 15px;
+}
+
+.bodyBeca h1{
+	margin-left: 10px;
+	font-size: 24px;
+	color: $orange;
+	margin: 60px 0px 55px 10px;
+	a{
+		text-decoration: none;
+		color: $orange;
+	}
+	span{
+		color:$gray;
+	}
+}
+
+.bodyBeca #contenedor p{
+	width: 630px;
+	font-family: 'montserrat';
+	font-size: 14px;
+	color: $gray;
+	line-height: 24px;
+	margin-left: 10px;
+	a{
+		text-decoration: none;
+		color: $orange;
+	}
+}
+
+
+#beca{
+	margin-left: 10px;
+	h1{
+		margin-left: 0px;
+	}
+	label{
+		color: $gray;
+		margin-right: 10px;
+	}
+
+	.checkbox{
+		&.last{
+			margin-right: 72px;
+		}
+	}
+
+	input[type="text"],input[type="email"], input[type="tel"], input[type="date"], select{
+		border:1px solid $lightblue;
+		outline:none;
+		margin-bottom: 20px;
+		padding: 7px 5px;
+		font-family: 'bellota';
+		&#nombre{
+			width: 455px;
+		}
+		&#email{
+			width: 548px;
+		}
+		&#nacimiento{
+			margin-right: 70px;
+		}
+		&#sexo{
+			width: 199px;
+		}
+		&#cedula{
+			width: 532px;
+		}
+		&#telefono{
+			width: 175px;
+			margin-right: 8px;
+		}
+		&#celular{
+			width: 181px;
+		}
+		&#barrio{
+			width: 273px;
+			margin-right: 8px;
+		}
+		&#ciudad{
+			width: 179px;
+		}
+		&#direccion{
+			width: 518px;
+		}
+
+		&#colegio{
+			width: 439px;
+		}
+
+		&#direccioncolegio{
+			width: 245px;margin-right: 14px;
+		}
+
+		&#telefonocolegio{
+			width: 171px;
+		}
+
+		&#bachillerato{
+			width: 169px;margin-right: 14px;
+		}
+
+		&#promedio{
+			width: 116px;
+		}
+		&#egreso{
+			width: 145px;
+		}
+
+		&#carrera{
+			width: 420px;
+		}
+
+		&#vives,&#desempeno,&#familia,&#padrestrabajo,&#padresacademico,&#viven,&#sostienes,&#hermanos,&#edadhermanos,&#cantidadegresados,{
+			margin-top: 20px;
+			width: 600px;
+		}
+	}
+
+	input[type="submit"]{
+		background-image: url('../images/bgbutton.jpg');
+		border: none;
+		font-family: 'montserrat';
+		color: #fff;
+		cursor: pointer;
+		width: 120px;
+		height: 40px;
+	}
+
+	
+}
+
+
+/*Solicitud*/
+
+#solicitud{
+	margin-left: 10px;
+	margin-top: 60px;
+
+	input[type="submit"]{
+		background-image: url('../images/bgbutton.jpg');
+		border: none;
+		font-family: 'montserrat';
+		color: #fff;
+		cursor: pointer;
+		width: 120px;
+		height: 40px;
+		margin-left: 163px;
+	}
+
+	input[type="text"],input[type="email"], input[type="tel"], input[type="date"], select{
+		border:1px solid $lightblue;
+		outline:none;
+		margin-bottom: 20px;
+		padding: 7px 5px;
+		font-family: 'bellota';
+		width: 460px;
+		position: relative;
+		&#nombre{
+			left: 10px;
+		}
+		&#telefono{
+			left: 86px;
+		}
+		&#direccion{
+			left: 82px;
+		}
+		&#cedula{
+			left: 96px;
+		}
+		&#email{
+			left: 111px;
+		}
+
+	}
+
+	label{
+		color: $gray;
+		margin-right: 10px;
+		width: 300px;
+		display: inline;
+	}
+}
+
+/*Mapa*/
+
+.bodyMapa #contenedor{padding-bottom: 120px;}
+
+#mapamall{
+	margin-left: 10px;
+	margin-top: 60px;
+	label{
+		color: $gray;
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	select{
+		border:1px solid $lightblue;
+		outline:none;
+		margin-bottom: 20px;
+		padding: 7px 0px;
+		color: $lightblue; 
+	}
+
+
+}
+
+.mapaprovisional{
+		width: 920px;
+		height: 805px;
+		//background-color: $gray;
+		margin-left: 10px;
+	}
+
+
+
+/*Footer*/
+
+footer{
+	@include pie-clearfix;
+	background-color: #fff;
+
+	section{
+		
+		width: 940px;
+		margin: 0 auto;
+		position: relative;
+		top: 35px;
+	}
+	
+	height: 90px;
+	margin-top: 120px;
+	p{
+		color: $gray;
+		display: inline;
+		float: left;
+		position: relative;
+		top: 0px;
+	}
+
+	form{
+		float: left;
+		margin-left: 30px;
+		label{
+			color:$lightblue;
+		}
+		input{
+			width: 286px;
+			padding: 2px 2px;
+			border: 1px solid;
+			border-color: $lightblue;
+			outline: none;
+			margin-left: 5px;
+			height: 28px;
+			margin-top: -10px;
+		}
+	}
+	ul{
+
+		li{
+			float: right;
+			position: relative;
+			bottom: 7px;
+		}
+
+	}
+}
